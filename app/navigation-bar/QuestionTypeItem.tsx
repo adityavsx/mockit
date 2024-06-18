@@ -12,7 +12,7 @@ export default function NavbarCardItem(props: {
 }) {
     return (
         <div className = "flex group">
-            <div className="w-full font-light text-sm flex transition-colors duration-500 ease-in-out hover:bg-question-type-item-hover rounded select-none p-2">
+            <div className="w-full font-light text-sm flex transition-colors duration-500 ease-in-out hover:bg-question-type-item-hover rounded p-2">
                 <LibraryAddTwoToneIcon style={{
                     color: '#000D7C',
                     width: "30px",
