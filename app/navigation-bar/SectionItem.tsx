@@ -1,19 +1,19 @@
 ﻿'use client'
-import LibraryAddTwoToneIcon from '@mui/icons-material/LibraryAddTwoTone';
+import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 
 // This is the click
 function tickClick() {
     console.log('tick-clicked')
 }
 
-export default function NavbarCardItem(props: {
+export default function SectionItem(props: {
     name: string,
     desc: string
 }) {
     return (
         <div className = "flex group">
             <div className="w-full font-light text-sm flex transition-colors duration-500 ease-in-out hover:bg-question-type-item-hover rounded p-2">
-                <LibraryAddTwoToneIcon style={{
+                <RateReviewTwoToneIcon style={{
                     color: '#000D7C',
                     width: "30px",
                 }} onClick={tickClick} className= "cursor-pointer active:fill-black"/>

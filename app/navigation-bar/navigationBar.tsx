@@ -1,5 +1,4 @@
-﻿import QuestionTypeCard from "./QuestionTypeCard"
-import MocksCard from "./MocksCard"
+﻿import SectionList from "./SectionList"
 export default function NavigationBar() {
     return (
          <div className= "bg-navbar-background-light flex w-72 place-content-center select-none overflow-y-hidden hover:overflow-auto min-h-screen max-h-screen scrollbar">
@@ -8,8 +7,7 @@ export default function NavigationBar() {
                     Navigations
                 </h1>
                 <ul>
-                    <QuestionTypeCard/>
-                    <MocksCard />
+                    <SectionList/>
                 </ul>
             </header>
         </div>

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import colors from 'tailwindcss/colors';
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
@@ -12,10 +13,12 @@ const config: Config = {
       colors: {
         'navbar-background-light': "#DDE0F9",
         'question-type-item-hover': '#CBD1FF',
-        'mock-item-hover': '#B7BFFF'
+        'mock-item-hover': '#B7BFFF',
+        'add-section': '#000640'
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
+
 };
 export default config;
