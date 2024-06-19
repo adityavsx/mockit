@@ -6,9 +6,6 @@ export default function MockEditWindow(props: { mockName: string }) {
                 {props.mockName}
             </h1>
             <div className="m-5">
-                <Button className = "absolute bg-add-section">
-                    hi there
-                </Button>
             </div>
         </div>
      )
