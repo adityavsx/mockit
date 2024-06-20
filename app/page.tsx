@@ -1,9 +1,9 @@
-import NavigationBar from ".//navigation-bar/navigationBar"
-import MockEditWindow from "./mock-edit-screen/MockEditWindow";
+import NavBar from "./components/navigation-bar/NavBar"
+import MockEditWindow from "./components/mock-edit-screen/MockEditWindow";
 export default function Home() {
   return (
     <main className= "flex">
-      <NavigationBar />
+      <NavBar />
       <MockEditWindow mockName= "JEE MAINS MOCK 2"/>
    </main>
   );

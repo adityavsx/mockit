@@ -17,7 +17,9 @@ const config: Config = {
         'mock-item-hover': '#B7BFFF',
         'add-section': '#EFEFEF',
         'navbar-determining-icon': '#BCC3FF',
-        'navbar-determining-icon-fill': '#000640'
+        'navbar-determining-icon-fill': '#000640',
+        'section-item-delete': '#FFD5D5',
+        'section-item-delete-active': '#F9B1B1'
 
       },
     },

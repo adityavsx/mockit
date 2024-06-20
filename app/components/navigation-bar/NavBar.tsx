@@ -1,5 +1,5 @@
 ﻿import SectionList from "./SectionList"
-export default function NavigationBar() {
+export default function NavBar() {
     return (
          <div className= "bg-navbar-background-light flex w-96 place-content-center select-none overflow-y-hidden hover:overflow-auto min-h-screen max-h-screen scrollbar pl-24">
             <header>
