@@ -39,8 +39,8 @@ export default function EditMockSection() {
             </div>
             <ul>
                 {
-                    Array.from(sectionMap, ([key, value]) => ({ key, value })).map(key  => (
-                        <SectionItem name={key.value.name.toString()} desc={key.value.description.toString()} id={key.key} />
+                    Array.from(sectionMap, ([key, value]) => ({ key, value })).map((key:any)  => (
+                        <SectionItem key={key.key} name={key.value.name.toString()} desc={key.value.description.toString()} id={key.key} />
                     ))
                 }
             </ul>
