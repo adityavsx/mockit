@@ -6,7 +6,11 @@ export const makeStore = () => {
         reducer: {
             section: sectionReducer,
             addSection : addSectionReducer
-        }
+        },
+        middleware: getDefaultMiddleware =>
+            getDefaultMiddleware({
+                serializableCheck: false,
+            }),
     })
 }
 

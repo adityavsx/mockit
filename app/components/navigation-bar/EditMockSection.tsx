@@ -7,12 +7,18 @@ import SectionItem from "./SectionItem";
 
 export default function EditMockSection() {
 
-    let sectionList: string[] = useSelector((state: any) => state.addSection.items);
+    let sectionMap: Map<string, Object> = useSelector((state: any) => state.addSection.items);
     const dispatch = useDispatch();
     const handleClick = (e: any) => {
         e.preventDefault();
-        let newSectionItem : String = `Section ${sectionList.length+1}`;
-        dispatch(addSectionActions.addSection({ name : newSectionItem }));
+        let newSectionItem : String = `Section ${sectionMap.size+1}`;
+        dispatch(addSectionActions.addSection({
+            id: sectionMap.size,
+            value : {
+                name : newSectionItem,
+                description :  `Add a description for ${newSectionItem}`
+            }
+        }));
     }
     return (
         <div>
@@ -32,12 +38,12 @@ export default function EditMockSection() {
                 </div>
             </div>
             <ul>
-                {sectionList.map(sectionItem => (
-                    <SectionItem key={sectionItem} name = {sectionItem} desc ="This has nothing to do with the desciprtion "/>
-                ))}
+                {
+                    Array.from(sectionMap, ([key, value]) => ({ key, value })).map(key  => (
+                        <SectionItem name={key.value.name.toString()} desc={key.value.description.toString()} id={key.key} />
+                    ))
+                }
             </ul>
         </div>
     )
 }
-
-// <SectionItem name="Physics MMCQ" desc="Four choice question out of which one or more may be correct." />

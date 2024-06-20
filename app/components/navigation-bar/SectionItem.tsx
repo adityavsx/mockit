@@ -1,20 +1,25 @@
 ﻿'use client'
 import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-// This is the click
-function tickClick() {
-    console.log('tick-clicked')
-}
+import { useDispatch } from 'react-redux';
+import { addSectionActions } from '@/app/state/section/addSectionSlice';
+
 
 export default function SectionItem(props: {
     name: string,
+    id : string ,
     desc: string,
 }) {
 
-    const handleClick = (e: any, key:string) => {
+    // handles the deleteClick
+    const dispatch = useDispatch();
+    const handleDeleteClick = (e: any, key:string) => {
         e.preventDefault();
-        console.log(`delete ${key}`)
+        dispatch(addSectionActions.deleteSection(props.id));
+
     }
+
+
     return (
         <div className = "flex group">
             <div
@@ -23,7 +28,7 @@ export default function SectionItem(props: {
                 <RateReviewTwoToneIcon
                     style={{
                         color: '#000D7C',
-                    }} onClick={tickClick} className="cursor-pointer active:fill-black my-0.5"
+                    }} className="cursor-pointer active:fill-black my-0.5"
                 />
                 <text className = "mx-3 w-full my-0.5">
                     {props.name}
@@ -31,7 +36,7 @@ export default function SectionItem(props: {
             </div>
             <div
                 className="p-1 m-1 bg-section-item-delete transition-all duration-500 scale-0 origin-left group-hover:scale-100 rounded-md cursor-pointer active:bg-section-item-delete-active"
-                onClick={(e)=>handleClick(e, props.name)}
+                onClick={(e)=>handleDeleteClick(e, props.name)}
             >
                 <DeleteTwoToneIcon
                     style={{
