@@ -4,7 +4,6 @@ export default function Home() {
   return (
     <main className= "flex">
       <NavBar />
-      <MockEditWindow mockName= "JEE MAINS MOCK 2"/>
    </main>
   );
 }

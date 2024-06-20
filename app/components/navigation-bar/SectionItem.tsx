@@ -1,5 +1,4 @@
-﻿'use client'
-import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
+﻿import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { useDispatch } from 'react-redux';
 import { addSectionActions } from '@/app/state/section/addSectionSlice';
@@ -47,7 +46,7 @@ export default function SectionItem(props: {
                 />
             </div>
             <span
-                className="w-auto max-w-80 absolute p-2 right-90 rounded-md left-96 shadow-lg text-white bg-black font-regular transition-all duration-500 scale-0 origin-left group-hover:scale-100"
+                className="my-1 w-auto max-w-80 absolute p-2 right-90 rounded-md left-96 shadow-lg text-white bg-black font-regular transition-all duration-500 scale-0 origin-left group-hover:scale-100"
             >
                 <p>{props.desc}</p>
             </span>
