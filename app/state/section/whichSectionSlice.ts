@@ -1,6 +1,6 @@
 ﻿import { createSlice } from "@reduxjs/toolkit";
 
-interface SectionSlice {
+interface whichSectionSlice {
     showEditMockSection: boolean,
     showPullMockSection: boolean,
     justClicked: string,
@@ -8,14 +8,14 @@ interface SectionSlice {
 
 }
 
-const initialState: SectionSlice = {
+const initialState: whichSectionSlice = {
     showEditMockSection: true,
     showPullMockSection: false,
     justClicked: 'edit-mock',
     lastClicked: 'edit-mock'
 };
 
-const sectionSlice = createSlice({
+const whichSectionSlice = createSlice({
     name: "show-section",
     initialState : initialState,
     reducers: {
@@ -30,5 +30,5 @@ const sectionSlice = createSlice({
     }
 })
 
-export const sectionActions = sectionSlice.actions
-export default sectionSlice.reducer
+export const whichSectionActions = whichSectionSlice.actions
+export default whichSectionSlice.reducer

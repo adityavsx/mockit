@@ -1,8 +1,8 @@
 ﻿import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { useDispatch } from 'react-redux';
-import { addSectionActions } from '@/app/state/section/sectionActionsSlice';
-import { Button, Tooltip } from '@nextui-org/react';
+import { sectionActions } from '@/app/state/section/sectionActionsSlice';
+import { Tooltip } from '@nextui-org/react';
 
 
 export default function SectionItem(props: {
@@ -13,10 +13,15 @@ export default function SectionItem(props: {
 
     // handles the deleteClick
     const dispatch = useDispatch();
-    const handleDeleteClick = (e: any, key:string) => {
+    const handleDeleteClick = (e: any) => {
         e.preventDefault();
-        dispatch(addSectionActions.deleteSection(props.id));
+        dispatch(sectionActions.deleteSection(props.id));
 
+    }
+
+    const handleSectionClick = (e: any) => {
+        e.preventDefault();
+        dispatch(sectionActions.selectSection(props.id));
     }
 
 
@@ -36,6 +41,7 @@ export default function SectionItem(props: {
                  <div
                     className="my-0.5 bg-section-item w-full font-regular text-sm flex
                     rounded-lg py-1 cursor-pointer transition-all duration-500 active:bg-section-item-action"
+                    onClick = {(e)=>handleSectionClick(e)}
                 >
                     <text className = "ml-2 mt-0.5 w-full">
                         {props.name}
@@ -45,7 +51,7 @@ export default function SectionItem(props: {
             {/* // this is done */}
                 <div
                     className="m-0.5 bg-section-item-delete rounded-md cursor-pointer transition-all duration-500 active:bg-section-item-delete-active"
-                    onClick={(e)=>handleDeleteClick(e, props.name)}
+                    onClick={(e)=>handleDeleteClick(e)}
                 >
                     <DeleteTwoToneIcon
                         style={{

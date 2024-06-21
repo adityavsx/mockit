@@ -1,6 +1,6 @@
 ﻿import { useDispatch, useSelector } from "react-redux"
 import { Button } from "@nextui-org/button"
-import { addSectionActions } from "@/app/state/section/sectionActionsSlice";
+import { sectionActions } from "@/app/state/section/sectionActionsSlice";
 import SectionItem from "./SectionItem";
 import { v4 as uuid4 } from 'uuid';
 
@@ -10,12 +10,12 @@ export default function EditMockSection(props: {
     mockName : string
 }) {
 
-    let sectionMap: Map<string, Object> = useSelector((state: any) => state.addSection.items);
+    let sectionMap: Map<string, Object> = useSelector((state: any) => state.sectionAction.items);
     const dispatch = useDispatch();
     const handleClick = (e: any) => {
         e.preventDefault();
         let newSectionItem : String = `New Section`;
-        dispatch(addSectionActions.addSection({
+        dispatch(sectionActions.addSection({
             id: uuid4(),
             value : {
                 name : newSectionItem,

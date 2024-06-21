@@ -5,14 +5,14 @@ import { Button, ButtonGroup } from "@nextui-org/button";
 import { useDispatch, useSelector } from "react-redux";
 import EditMockSection from "./EditMockSection";
 import PullMockSection from "./PullMockSection";
-import { sectionActions } from '@/app/state/section/sectionSlice';
+import { whichSectionActions } from '@/app/state/section/whichSectionSlice';
 
 export default function SectionList() {
 
     // handles clicks of the top two buttons
     const dispatch = useDispatch();
     const handleSectionClicked = (e: any, clickedElement: String) => {
-        dispatch(sectionActions.changeSections(clickedElement));
+        dispatch(whichSectionActions.changeSections(clickedElement));
     }
 
     // truth values that are used to hide or show the sections
