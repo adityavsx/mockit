@@ -6,7 +6,7 @@ enableMapSet();
 
 export interface sectionDetails {
     name: string,
-    description: string,
+    description: string
 }
 
 export interface sectionActionSlice {
@@ -16,7 +16,7 @@ export interface sectionActionSlice {
 
 const initialState: sectionActionSlice = {
     items: new Map(),
-    selectedSection : ""
+    selectedSection : "[select section]"
 };
 
 const sectionActionSlice = createSlice({
@@ -28,7 +28,7 @@ const sectionActionSlice = createSlice({
         },
         deleteSection(state: any, action) {
             if (state.selectedSection = action.payload)
-                state.selectedSection = "";
+                state.selectedSection = "[select section]";
             state.items.delete(action.payload);
         },
         selectSection(state : any, action) {

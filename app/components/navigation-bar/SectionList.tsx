@@ -29,7 +29,7 @@ export default function SectionList() {
                         <Button isIconOnly className="p-1 h-8 bg-navbar-determining-icon" radius="sm" onClick={(e)=>handleSectionClicked(e, 'edit-mock')}><EditNoteIcon className="fill-navbar-determining-icon-fill"/></Button>
                     </ButtonGroup>
                 </div>
-                {showEditMockSection && <EditMockSection mockName='[mock-name] '/>}
+                {showEditMockSection && <EditMockSection mockName='[mock-name]'/>}
                 {showPullMockSection && <PullMockSection/>}
             </div>
        </div>
