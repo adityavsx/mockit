@@ -1,14 +1,14 @@
 ﻿import SectionList from "./SectionList"
+import { Divider } from "@nextui-org/divider";
 export default function NavBar() {
     return (
-         <div className= "bg-navbar-background-light flex w-96 place-content-center select-none overflow-y-hidden hover:overflow-auto min-h-screen max-h-screen scrollbar pl-24">
-            <header>
-                <h1 className= "text-2xl text-black underline m-10 font-bold">
-                </h1>
-                <ul>
-                    <SectionList/>
-                </ul>
-            </header>
+        <div className = "my-10 flex">
+            <div className= "bg-navbar-background-light flex w-96 place-content-center select-none overflow-y-hidden hover:overflow-auto max-h-screen scrollbar pl-24">
+                    <ul>
+                        <SectionList />
+                    </ul>
+            </div>
+            <Divider orientation = "vertical"/>
         </div>
     )
 }

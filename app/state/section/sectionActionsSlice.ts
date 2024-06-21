@@ -3,16 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { enableMapSet } from "immer";
 
 enableMapSet();
-interface AddSectionSlice {
+interface sectionActionSlice {
     items : Map<string , Object>
 }
 
-const initialState: AddSectionSlice = {
+const initialState: sectionActionSlice = {
     items : new Map
 };
 
-const addSectionSlice = createSlice({
-    name: "add section",
+const sectionActionSlice = createSlice({
+    name: "section action",
     initialState: initialState,
     reducers: {
         addSection(state, action) {
@@ -23,5 +23,5 @@ const addSectionSlice = createSlice({
         }
     },
 })
-export const addSectionActions = addSectionSlice.actions
-export default addSectionSlice.reducer
+export const addSectionActions = sectionActionSlice.actions
+export default sectionActionSlice.reducer

@@ -13,7 +13,8 @@ const config: Config = {
     extend: {
       colors: {
         'navbar-background-light': "#fff",
-        'question-type-item-hover': '#CBD1FF',
+        'section-item': '#E6E9FF',
+        'section-item-action': '#B4BDFF',
         'mock-item-hover': '#B7BFFF',
         'add-section': '#EFEFEF',
         'navbar-determining-icon': '#BCC3FF',

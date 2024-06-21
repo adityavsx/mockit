@@ -1,7 +1,8 @@
 ﻿import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { useDispatch } from 'react-redux';
-import { addSectionActions } from '@/app/state/section/addSectionSlice';
+import { addSectionActions } from '@/app/state/section/sectionActionsSlice';
+import { Button, Tooltip } from '@nextui-org/react';
 
 
 export default function SectionItem(props: {
@@ -20,36 +21,40 @@ export default function SectionItem(props: {
 
 
     return (
-        <div className = "flex group">
-            <div
-                className="h-10 mt-1 w-full font-regular text-sm flex transition-colors duration-500 ease-in-out group-hover:bg-question-type-item-hover rounded p-2"
+        <div className = "flex group h-9">
+            <Tooltip
+                content={
+                    <div className="px-1 py-2">
+                        <div className="text-small font-bold">Description</div>
+                        <div className="text-tiny">{props.desc}</div>
+                    </div>
+                }
+                closeDelay={0}
+                showArrow={true}
+                placement='right'
             >
-                <RateReviewTwoToneIcon
-                    style={{
-                        color: '#000D7C',
-                    }} className="cursor-pointer active:fill-black my-0.5"
-                />
-                <text className = "mx-3 w-full my-0.5">
-                    {props.name}
-                </text>
+                 <div
+                    className="my-0.5 bg-section-item w-full font-regular text-sm flex
+                    rounded-lg py-1 cursor-pointer transition-all duration-500 active:bg-section-item-action"
+                >
+                    <text className = "ml-2 mt-0.5 w-full">
+                        {props.name}
+                    </text>
+                </div>
+            </Tooltip>
+            {/* // this is done */}
+                <div
+                    className="m-0.5 bg-section-item-delete rounded-md cursor-pointer transition-all duration-500 active:bg-section-item-delete-active"
+                    onClick={(e)=>handleDeleteClick(e, props.name)}
+                >
+                    <DeleteTwoToneIcon
+                        style={{
+                            color: '#B35454',
+                            width : '30px'
+                        }}
+                        className="my-1"
+                    />
+                </div>
             </div>
-            <div
-                className="p-1 m-1 bg-section-item-delete transition-all duration-500 scale-0 origin-left group-hover:scale-100 rounded-md cursor-pointer active:bg-section-item-delete-active"
-                onClick={(e)=>handleDeleteClick(e, props.name)}
-            >
-                <DeleteTwoToneIcon
-                    style={{
-                        color: '#B35454',
-                        width : '30px'
-                    }}
-                    className="my-1"
-                />
-            </div>
-            <span
-                className="my-1 w-auto max-w-80 absolute p-2 right-90 rounded-md left-96 shadow-lg text-white bg-black font-regular transition-all duration-500 scale-0 origin-left group-hover:scale-100"
-            >
-                <p>{props.desc}</p>
-            </span>
-        </div>
     )
 }

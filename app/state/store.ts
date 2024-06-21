@@ -1,6 +1,6 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
 import sectionReducer from './section/sectionSlice'
-import addSectionReducer from './section/addSectionSlice'
+import addSectionReducer from './section/sectionActionsSlice'
 export const makeStore = () => {
     return configureStore({
         reducer: {
