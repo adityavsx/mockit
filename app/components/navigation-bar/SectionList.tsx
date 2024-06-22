@@ -1,11 +1,8 @@
 ﻿'use client'
-import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import { Button, ButtonGroup } from "@nextui-org/button";
 import { useDispatch, useSelector } from "react-redux";
-import EditMockSection from "./EditMockSection";
 import PullMockSection from "./PullMockSection";
 import { whichSectionActions } from '@/app/state/section/whichSectionSlice';
+import SectionOverviewPanel from './SectionOverviewPanel';
 
 export default function SectionList() {
 
@@ -23,13 +20,9 @@ export default function SectionList() {
     return (
         <div>
             <div>
-                <div className="flex w-auto p-3 place-content-center">
-                    <ButtonGroup>
-                        <Button isIconOnly className="p-1 h-8 bg-navbar-determining-icon" radius="sm" onClick={(e)=>handleSectionClicked(e, 'pull-mock')}><LocationSearchingIcon className="fill-navbar-determining-icon-fill" /></Button>
-                        <Button isIconOnly className="p-1 h-8 bg-navbar-determining-icon" radius="sm" onClick={(e)=>handleSectionClicked(e, 'edit-mock')}><EditNoteIcon className="fill-navbar-determining-icon-fill"/></Button>
-                    </ButtonGroup>
+                <div className = "h-[90vh] container px-2 overflow-hidden">
+                    {showEditMockSection && <SectionOverviewPanel />}
                 </div>
-                {showEditMockSection && <EditMockSection mockName='[mock-name]'/>}
                 {showPullMockSection && <PullMockSection/>}
             </div>
        </div>

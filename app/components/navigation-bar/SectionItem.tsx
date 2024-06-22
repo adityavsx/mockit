@@ -2,7 +2,7 @@
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { useDispatch } from 'react-redux';
 import { sectionActions } from '@/app/state/section/sectionActionsSlice';
-import { Tooltip } from '@nextui-org/react';
+import _Tooltip from '@/app/ui/Tooltip';
 
 
 export default function SectionItem(props: {
@@ -26,28 +26,18 @@ export default function SectionItem(props: {
 
 
     return (
-        <div className = "flex group h-9">
-            <Tooltip
-                content={
-                    <div className="px-1 py-2">
-                        <div className="text-small font-bold">Description</div>
-                        <div className="text-tiny">{props.desc}</div>
-                    </div>
-                }
-                closeDelay={0}
-                showArrow={true}
-                placement='right'
-            >
-                 <div
-                    className="my-0.5 bg-section-item w-full font-regular text-sm flex
+        <div className="flex group h-9">
+            <_Tooltip description={props.desc} placement= "right">
+            <div
+                className="my-0.5 bg-section-item w-full font-regular text-sm flex
                     rounded-lg py-1 cursor-pointer transition-all duration-500 active:bg-section-item-action"
-                    onClick = {(e)=>handleSectionClick(e)}
-                >
-                    <text className = "ml-2 mt-0.5 w-full">
-                        {props.name}
-                    </text>
-                </div>
-            </Tooltip>
+                onClick={(e) => handleSectionClick(e)}
+            >
+                <text className="ml-2 mt-0.5 w-full">
+                    {props.name}
+                </text>
+            </div>
+            </_Tooltip>
             {/* // this is done */}
                 <div
                     className="m-0.5 bg-section-item-delete rounded-md cursor-pointer transition-all duration-500 active:bg-section-item-delete-active"

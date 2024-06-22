@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 @layer utilities {
-    .scrollbar::-webkit-scrollbar {
+::-webkit-scrollbar {
         width: 5px;
-        
+        height: 10px;
+        border-radius: 34px;
     }
 
-    .scrollbar::-webkit-scrollbar-track {
-        border-radius: 100vh;
-        background: white;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb {
-        background: #bbbbbb;
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 8px;
+        transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -webkit-transition: all 0.4s;
     }
 }

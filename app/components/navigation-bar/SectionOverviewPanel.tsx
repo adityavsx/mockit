@@ -6,9 +6,7 @@ import { v4 as uuid4 } from 'uuid';
 
 
 
-export default function EditMockSection(props: {
-    mockName : string
-}) {
+export default function SectionOverviewPanel() {
 
     let sectionMap: Map<string, Object> = useSelector((state: any) => state.sectionAction.items);
     const dispatch = useDispatch();
@@ -24,11 +22,11 @@ export default function EditMockSection(props: {
         }));
     }
     return (
-        <div>
+        <div className="py-16">
+            <h1 className="font-bold text-black">
+                Section Overview
+            </h1>
             <div>
-                <div className="bg-transparent underline w-52 font-semibold mb-1">
-                    {props.mockName}
-                </div>
                 <div className="align-baseline mb-3 mt-1">
                     <Button
                         size="sm"
@@ -41,13 +39,15 @@ export default function EditMockSection(props: {
                     </Button>
                 </div>
             </div>
-            <ul>
-                {
-                    Array.from(sectionMap, ([key, value]) => ({ key, value })).map((key:any)  => (
-                        <SectionItem key={key.key} name={key.value.name.toString()} desc={key.value.description.toString()} id={key.key} />
-                    ))
-                }
-            </ul>
+            <div className="h-[65vh] overflow-y-hidden hover:overflow-auto max-h-screen scrollbarp-2">
+                <ul>
+                    {
+                        Array.from(sectionMap, ([key, value]) => ({ key, value })).map((key:any)  => (
+                            <SectionItem key={key.key} name={key.value.name.toString()} desc={key.value.description.toString()} id={key.key} />
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     )
 }
