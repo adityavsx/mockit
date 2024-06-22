@@ -1,4 +1,4 @@
-﻿export default function SectionDetails() {
+﻿export default function SectionDetails( ) {
     return (
         <div className="container m-1 w-1/2">
             <div className="p-1">

@@ -18,6 +18,7 @@
     "@nextui-org/react": "^2.4.2",
     "@reduxjs/toolkit": "^2.2.5",
     "@types/redux": "^3.6.0",
+    "better-react-mathjax": "^2.0.3",
     "framer-motion": "^11.2.10",
     "immer": "^10.1.1",
     "next": "14.2.4",

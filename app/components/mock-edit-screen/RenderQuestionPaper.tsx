@@ -1,7 +1,9 @@
-﻿import QuestionCard from "./QuestionCard";
+﻿import { MathJaxContext } from "better-react-mathjax";
+import QuestionCard from "./QuestionCard";
 
 export default function RenderedQuestionPaper() {
     return (
+        <MathJaxContext>
         <div className="container m-1 p-1">
             <div className="font-bold">
                 Rendered Question Paper
@@ -16,6 +18,7 @@ export default function RenderedQuestionPaper() {
                 <QuestionCard question="" options={new Array<string>} />
                 <QuestionCard question="" options={new Array<string>} />
             </div>
-        </div>
+            </div>
+        </MathJaxContext>
     )
 }
