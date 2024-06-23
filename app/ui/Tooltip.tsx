@@ -10,7 +10,7 @@ export default function _Tooltip(props: {
         <Tooltip
             content={
                 <div className="px-1 py-2">
-                    <div className="text-small font-bold">Description</div>
+                    <div className="text-small font-bold underline">Description</div>
                     <div className="text-tiny">{ props.description }</div>
                 </div>
             }

@@ -1,10 +1,20 @@
-﻿export default function SectionDetails( ) {
+﻿import Empty from "@/app/ui/EmptyBox";
+import { useSelector } from "react-redux"
+
+export default function SectionDetails(props: {
+    content: string
+}) {
+    const isSectionSelected = useSelector((state: any) => state.sectionAction.selectedSection);
     return (
-        <div className="container m-1 w-1/2">
+        <div className="container m-1">
             <div className="p-1">
-                <div className="font-bold">Section Details</div>
-                <div className="text-tiny">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel tempus mi. Nullam volutpat tristique orci quis dapibus. Nulla vitae blandit lectus, hendrerit tristique elit. Suspendisse a mauris quis urna condimentum finibus vel vel ex.
+                <p className="font-bold h-full">Section Details</p>
+                <div className="h-[20vh]">
+                    <Empty content="Select" isEmpty={isSectionSelected === '[select section]'}>
+                        <div className="text-tiny">
+                            {props.content}
+                        </div>
+                    </Empty>
                 </div>
             </div>
         </div>

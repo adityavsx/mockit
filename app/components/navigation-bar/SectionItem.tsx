@@ -16,7 +16,6 @@ export default function SectionItem(props: {
     const handleDeleteClick = (e: any) => {
         e.preventDefault();
         dispatch(sectionActions.deleteSection(props.id));
-
     }
 
     const handleSectionClick = (e: any) => {
