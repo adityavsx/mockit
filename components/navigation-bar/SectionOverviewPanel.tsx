@@ -1,9 +1,9 @@
 ﻿import { useDispatch, useSelector } from "react-redux"
 import { Button } from "@nextui-org/button"
-import { sectionActions, sectionSet } from "@/app/state/section/sectionActionsSlice";
+import { sectionActions, sectionSet } from "@/state/section/sectionActionsSlice";
 import SectionItem from "./SectionItem";
 import { v4 as uuid4 } from 'uuid';
-import Empty from "@/app/ui/EmptyBox";
+import Empty from "@/ui/EmptyBox";
 
 
 

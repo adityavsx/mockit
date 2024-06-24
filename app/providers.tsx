@@ -1,7 +1,7 @@
 ﻿'use client'
 import { NextUIProvider } from '@nextui-org/react'
 import { useRef } from 'react'
-import { AppStore, makeStore } from './state/store'
+import { AppStore, makeStore } from '../state/store'
 import  { Provider } from 'react-redux'
 
 export function NextUIProviders({ children }: { children: React.ReactNode }) {

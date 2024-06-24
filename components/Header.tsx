@@ -1,6 +1,4 @@
-﻿import MockItLogo from "../assets/MockitLogo";
-
-
+﻿
 export default function Header() {
     return (
         <div className="w-full border-b-1 h-16 justify-center">

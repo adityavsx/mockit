@@ -1,4 +1,4 @@
-﻿import Empty from "@/app/ui/EmptyBox";
+﻿import Empty from "@/ui/EmptyBox";
 import { useSelector } from "react-redux"
 
 export default function SectionDetails(props: {

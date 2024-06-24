@@ -1,4 +1,4 @@
-﻿import _Tooltip from "@/app/ui/Tooltip";
+﻿import _Tooltip from "@/ui/Tooltip";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
 

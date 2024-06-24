@@ -1,7 +1,7 @@
 ﻿'use client'
 import { useDispatch, useSelector } from "react-redux";
 import PullMockSection from "./PullMockSection";
-import { whichSectionActions } from '@/app/state/section/whichSectionSlice';
+import { whichSectionActions } from '@/state/section/whichSectionSlice';
 import SectionOverviewPanel from './SectionOverviewPanel';
 
 export default function SectionList() {

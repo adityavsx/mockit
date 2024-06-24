@@ -1,8 +1,8 @@
 ﻿import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import { useDispatch } from 'react-redux';
-import { sectionActions } from '@/app/state/section/sectionActionsSlice';
-import _Tooltip from '@/app/ui/Tooltip';
+import { sectionActions } from '@/state/section/sectionActionsSlice';
+import _Tooltip from '@/ui/Tooltip';
 
 
 export default function SectionItem(props: {

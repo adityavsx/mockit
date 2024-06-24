@@ -1,6 +1,6 @@
 ﻿import { MathJaxContext } from "better-react-mathjax";
 import QuestionCard from "./QuestionCard";
-import Empty from "@/app/ui/EmptyBox";
+import Empty from "@/ui/EmptyBox";
 import { useSelector } from "react-redux";
 
 export default function RenderedQuestionPaper() {

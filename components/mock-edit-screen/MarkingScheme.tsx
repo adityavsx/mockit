@@ -1,5 +1,5 @@
-﻿import Empty from "@/app/ui/EmptyBox";
-import _Tooltip from "@/app/ui/Tooltip";
+﻿import Empty from "@/ui/EmptyBox";
+import _Tooltip from "@/ui/Tooltip";
 import { useSelector } from "react-redux";
 
 export default function MarkingScheme() {
@@ -9,7 +9,7 @@ export default function MarkingScheme() {
             <div>
                 <div className="p-1">
                     <div className="font-bold">Marking Scheme</div>
-                    <div className="h-[20vh] my-0.5">
+                    <div className="h-[20vh]">
                         <Empty content="Marking Scheme" isEmpty={isSectionSelected === '[select section]'}>
                             <_Tooltip description="Score on correct answer" placement="right">
                                 <div className="bg-green-300 pt-1 pb-1 pl-2 text-green-700 w-1/3 rounded-lg text-tiny my-2">
