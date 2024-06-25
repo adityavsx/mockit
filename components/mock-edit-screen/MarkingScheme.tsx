@@ -1,9 +1,10 @@
-﻿import Empty from "@/ui/EmptyBox";
+﻿import { RootState } from "@/state/store";
+import Empty from "@/ui/EmptyBox";
 import _Tooltip from "@/ui/Tooltip";
 import { useSelector } from "react-redux";
 
 export default function MarkingScheme() {
-    const isSectionSelected = useSelector((state: any) => state.sectionAction.selectedSection);
+    const isSectionSelected = useSelector((state: RootState) => state.sectionAction.selectedSection);
     return (
         <div className="container mb-1 mr-1 ml-1 p-1">
             <div>

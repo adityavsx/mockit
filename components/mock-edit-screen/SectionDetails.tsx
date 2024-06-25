@@ -1,10 +1,11 @@
-﻿import Empty from "@/ui/EmptyBox";
+﻿import { RootState } from "@/state/store";
+import Empty from "@/ui/EmptyBox";
 import { useSelector } from "react-redux"
 
 export default function SectionDetails(props: {
     content: string
 }) {
-    const isSectionSelected = useSelector((state: any) => state.sectionAction.selectedSection);
+    const isSectionSelected = useSelector((state: RootState) => state.sectionAction.selectedSection);
     return (
         <div className="container m-1">
             <div className="p-1">

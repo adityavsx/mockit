@@ -1,11 +1,11 @@
 ﻿import { configureStore } from '@reduxjs/toolkit'
-import sectionReducer from './section/whichSectionSlice'
-import sectionActionSlice from './section/sectionActionsSlice'
+import sectionActionReducer from './section/sectionActionSlice'
+import sectionPermissionReducer from './section/sectionPermissionSlice'
 export const makeStore = () => {
     return configureStore({
         reducer: {
-            section: sectionReducer,
-            sectionAction : sectionActionSlice
+            sectionAction: sectionActionReducer,
+            sectionPermission : sectionPermissionReducer
         },
         middleware: getDefaultMiddleware =>
             getDefaultMiddleware({

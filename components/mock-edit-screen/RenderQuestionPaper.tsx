@@ -2,9 +2,10 @@
 import QuestionCard from "./QuestionCard";
 import Empty from "@/ui/EmptyBox";
 import { useSelector } from "react-redux";
+import { RootState } from "@/state/store";
 
 export default function RenderedQuestionPaper() {
-    const isSectionSelected = useSelector((state : any )=> state.sectionAction.selectedSection)
+    const isSectionSelected = useSelector((state : RootState )=> state.sectionAction.selectedSection)
     return (
         <MathJaxContext>
         <div className="container m-1 p-1">

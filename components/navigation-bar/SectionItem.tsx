@@ -1,8 +1,9 @@
 ﻿import RateReviewTwoToneIcon from '@mui/icons-material/RateReviewTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import { useDispatch } from 'react-redux';
-import { sectionActions } from '@/state/section/sectionActionsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import _Tooltip from '@/ui/Tooltip';
+import { deleteSection, selectSection } from '@/state/section/sectionActionSlice';
+import { RootState } from '@/state/store';
 
 
 export default function SectionItem(props: {
@@ -15,15 +16,15 @@ export default function SectionItem(props: {
     const dispatch = useDispatch();
     const handleDeleteClick = (e: any) => {
         e.preventDefault();
-        dispatch(sectionActions.deleteSection(props.id));
+        dispatch(deleteSection(props.id));
     }
 
     const handleSectionClick = (e: any) => {
         e.preventDefault();
-        dispatch(sectionActions.selectSection(props.id));
+        dispatch(selectSection(props.id));
     }
 
-
+    const canEdit = useSelector((state: RootState) => state.sectionPermission.canEdit);
     return (
         <div className="flex group h-9">
             <_Tooltip description={props.desc} placement= "right">
@@ -37,18 +38,17 @@ export default function SectionItem(props: {
                 </text>
             </div>
             </_Tooltip>
-            {/* // this is done */}
                 <div
                     className="m-0.5 bg-section-item-delete rounded-md cursor-pointer transition-all duration-500 active:bg-section-item-delete-active"
                     onClick={(e)=>handleDeleteClick(e)}
                 >
-                    <DeleteTwoToneIcon
-                        style={{
-                            color: '#B35454',
-                            width : '30px'
-                        }}
-                        className="my-1"
-                    />
+                {canEdit && <DeleteTwoToneIcon
+                    style={{
+                        color: '#B35454',
+                        width: '30px'
+                    }}
+                    className="my-1"
+                />}
                 </div>
             </div>
     )

@@ -1,22 +1,23 @@
-﻿import { useDispatch, useSelector } from "react-redux"
+﻿'use client'
+import { useDispatch, useSelector } from "react-redux"
 import { Button } from "@nextui-org/button"
-import { sectionActions, sectionSet } from "@/state/section/sectionActionsSlice";
+import {  addSection, sectionSet } from "@/state/section/sectionActionSlice";
 import SectionItem from "./SectionItem";
 import { v4 as uuid4 } from 'uuid';
 import Empty from "@/ui/EmptyBox";
-import Temp from "@/ui/temp";
-
-
+import MockPermissions from "./SectionPermissions";
+import { RootState } from "@/state/store";
 
 export default function SectionOverviewPanel() {
 
-    let sectionMap: Map<string, Object> = useSelector((state: any) => state.sectionAction.items);
-    let sectionThere: sectionSet = useSelector((state: any) => state.sectionAction.isSectionSet);
+    const sectionMap: Map<string, Object> = useSelector((state: RootState) => state.sectionAction.sectionBucket);
+    const sectionThere: sectionSet = useSelector((state: RootState) => state.sectionAction.isSectionSet);
+    const canEdit:boolean = useSelector((state: RootState) => state.sectionPermission.canEdit);
     const dispatch = useDispatch();
     const handleClick = (e: any) => {
         e.preventDefault();
-        let newSectionItem: String = `New Section`;
-        dispatch(sectionActions.addSection({
+        let newSectionItem: String = "New Section";
+        dispatch(addSection({
             id: uuid4(),
             value: {
                 name: newSectionItem,
@@ -31,7 +32,7 @@ export default function SectionOverviewPanel() {
                     <h1 className="font-bold text-black text-xl mx-3 underline">
                         Section
                     </h1>
-                        <Temp />
+                        <MockPermissions />
                 </div>
             </div>
             <div>
@@ -42,6 +43,7 @@ export default function SectionOverviewPanel() {
                         className="h-8 w-60 font-semibold"
                         variant="bordered"
                         onClick={(e) => handleClick(e)}
+                        isDisabled ={!canEdit}
                     >
                         Add a New Section
                     </Button>
