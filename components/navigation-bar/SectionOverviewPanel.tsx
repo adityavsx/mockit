@@ -26,10 +26,10 @@ export default function SectionOverviewPanel() {
         }));
     }
     return (
-        <div className="py-8">
+        <div className = "py-4">
             <div className="flex place-items-end">
                 <div className = "flex items-center">
-                    <h1 className="font-bold text-black text-xl mx-3 underline">
+                    <h1 className="font-bold text-black text-xl mx-3">
                         Section
                     </h1>
                         <MockPermissions />
@@ -49,7 +49,7 @@ export default function SectionOverviewPanel() {
                     </Button>
                 </div>
             </div>
-            <div className="h-[72vh] overflow-y-hidden hover:overflow-auto max-h-screen scrollbarp-2">
+            <div className="h-[70vh] overflow-y-hidden hover:overflow-auto max-h-screen scrollbarp-2">
                 <Empty content="No section there to display" isEmpty={sectionThere.valueOf() === sectionSet.SECTION_ISNOT_SET.valueOf()}>
                     <ul>
                         {

@@ -12,7 +12,7 @@ export default function RenderedQuestionPaper() {
             <div className="font-bold">
                 Rendered Question Paper
             </div>
-                <div className="h-[75vh]">
+                <div className="h-[72vh]">
                     <Empty content="No Question Paper to Render" isEmpty={isSectionSelected === '[select section]'}>
                         <div className= "p-4 rounded border-1 border-gray-400 border-dashed overflow-y-hidden hover:overflow-auto max-h-screen scrollbar">
                             <QuestionCard question="Some question must be put here" questionID=""/>
