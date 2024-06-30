@@ -156,7 +156,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com f
 `
 
 export default function DocsPage() {
@@ -166,7 +165,7 @@ export default function DocsPage() {
     }, [])
     return (
         <div className="h-[85vh] flex justify-center">
-            <div className="w-4/6 p-8 overflow-scroll ">
+            <div className="w-4/6 p-8 overflow-scroll scroll-smooth ">
                 <div className="prose">
                     <Markdown markdown={{
                         content: input
