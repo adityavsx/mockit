@@ -1,7 +1,7 @@
 ﻿import ReactMarkdown from 'react-markdown'
 import React from 'react'
 import MarkdownHeaderElement from './header/MarkdownHeaderElement';
-import HProps from '@/_cust-types/HProps';
+import HProps from '@/utils/types/HProps';
 
 export default function Markdown({ markdown }: {
     markdown: {

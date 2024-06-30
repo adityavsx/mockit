@@ -1,4 +1,4 @@
-﻿import HProps from "@/_cust-types/HProps";
+﻿import HProps from "@/utils/types/HProps";
 import linkHeader from "@/utils/linkHeader";
 
 const tagRules = {
