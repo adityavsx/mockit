@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 @layer utilities {
-::-webkit-scrollbar {
-        width: 5px;
-        height: 10px;
-        border-radius: 34px;
-    }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    border-radius: 34px;
+  }
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 8px;
-        transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -webkit-transition: all 0.4s;
-    }
-        ::-webkit-file-upload-button {
-            visibility: hidden;
-        }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+  }
+  ::-webkit-file-upload-button {
+    visibility: hidden;
+  }
 }

@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body className={inter.className}>
         <StoreProvider>
           <NextUIProviders>
-            <Header />
+              <Header />
               {children}
             </NextUIProviders>
           </StoreProvider>
