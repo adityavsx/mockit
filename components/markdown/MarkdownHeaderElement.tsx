@@ -1,9 +1,8 @@
 ﻿import HProps from "@/utils/types/HProps";
 import linkHeader from "@/utils/linkHeader";
+import { tagRules } from "@/utils/tagRules";
 
-const tagRules = {
-    headers: "text-white hover:text-gray-300 ease-in transition-all border-b-2 border-gray-300 "
-}
+
 export default function MarkdownHeaderElement(props : { hprops : HProps , hType : number} ) {
     const slug = linkHeader(props.hprops);
     switch (props.hType) {

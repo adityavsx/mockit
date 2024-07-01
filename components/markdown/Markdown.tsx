@@ -1,18 +1,21 @@
 ﻿import ReactMarkdown from 'react-markdown'
 import React from 'react'
-import MarkdownHeaderElement from './header/MarkdownHeaderElement';
+import MarkdownHeaderElement from './MarkdownHeaderElement';
 import HProps from '@/utils/types/HProps';
+import { tagRules } from '@/utils/tagRules';
+import { Button } from '@nextui-org/button';
+import { CopyAllOutlined } from '@mui/icons-material';
 
 export default function Markdown({ markdown }: {
     markdown: {
-        content : string
+        content: string
     }
 }) {
 
     const MarkdownComponents: object = {
         h1: (props: HProps) => {
             return (
-                <MarkdownHeaderElement hprops={props} hType={1}/>
+                <MarkdownHeaderElement hprops={props} hType={1} />
             )
         },
 
@@ -22,7 +25,7 @@ export default function Markdown({ markdown }: {
             )
         },
 
-        h3 : (props: HProps) => {
+        h3: (props: HProps) => {
             return (
                 <MarkdownHeaderElement hprops={props} hType={3} />
             )
@@ -43,6 +46,34 @@ export default function Markdown({ markdown }: {
         h6: (props: HProps) => {
             return (
                 <MarkdownHeaderElement hprops={props} hType={6} />
+            )
+        },
+        a: (props: any) => {
+            return (
+                <a href={props.children} className= {tagRules.a}>
+                    {props.children}
+                </a>
+            )
+        },
+        code: (props: any) => {
+            return (
+                <code className={tagRules.code}>
+                    {props.children}
+                </code>
+            )
+        },
+        pre: (props: any) => {
+            return (
+                <pre className = "bg-gray-700 rounded flex items-center">
+                    <div onClick={() => { navigator.clipboard.writeText(props.node.children[0].children[0].value) }}>
+                        <Button isIconOnly className = "bg-transparent px-0.5" disableAnimation>
+                            <CopyAllOutlined className = "fill-gray-400"/>
+                        </Button>
+                    </div>
+                    <div>
+                        {props.children}
+                    </div>
+                </pre>
             )
         }
     }

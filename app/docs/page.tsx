@@ -8,6 +8,7 @@ const input = `
 
 ## About The Project
 
+> Before we get into that we should perhaps talk 
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -45,9 +46,9 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
-  \`\`\`sh
-  npm install npm @latest -g
-    \`\`\`
+\`\`\`sh
+    npm install npm @latest -g
+\`\`\`
 
 ### Installation
 
@@ -55,15 +56,15 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
-   \`\`\`sh
-   git clone https://github.com/your_username_/Project-Name.git
+\`\`\`sh
+   git clone https://github.com/your_username_/Project-Name.git and thehn there is no copy
 \`\`\`
 3. Install NPM packages
-   \`\`\`sh
+\`\`\`sh
    npm install
-    \`\`\`
+\`\`\`
 4. Enter your API in \`config.js\`
-   \`\`\`js
+\`\`\`js
 const API_KEY = 'ENTER YOUR API';
 \`\`\`
 
@@ -161,18 +162,21 @@ Use this space to list resources you find helpful and would like to give credit 
 export default function DocsPage() {
     const [tags, setTags] = useState<Element[]>();
     useEffect(() => {
-        setTags(Array.from(document.querySelectorAll("a.custom-md-header-link-1, a.custom-md-header-link-2, a.custom-md-header-link-3, a.custom-md-header-link-4,a.custom-md-header-link-6, a.custom-md-header-link-5")));
+        setTags(Array.from(document.querySelectorAll("a.custom-md-header-link-1, a.custom-md-header-link-2, a.custom-md-header-link-3, a.custom-md-header-link-4,a.custom-md-header-link-5, a.custom-md-header-link-6")));
     }, [])
+
     return (
         <div className="h-[85vh] flex justify-center">
-            <div className="w-4/6 p-8 overflow-scroll scroll-smooth ">
-                <div className="prose">
+            <div className="w-4/6 p-8 overflow-scroll scroll-smooth"
+            >
+                <div className="prose ">
                     <Markdown markdown={{
                         content: input
                     }} />
                 </div>
             </div>
-            <div className="w-1/5 p-6 overflow-scroll scrollbar">
+            <div className="w-1/5 p-6 overflow-scroll scrollbar "
+            >
                 {
                     tags?.map((value) => {
                         const getHType = parseInt(value.classList[1].charAt(value.classList[1].length - 1));

@@ -22,6 +22,16 @@ const config: Config = {
         'section-item-delete-active': '#F9B1B1'
 
       },
+      typography: {
+				DEFAULT: {
+					css: {
+						"code::before": { content: '""' },
+            "code::after": { content: '""' },
+            "p::before": { content: '""' },
+            "p::after": { content: '""' },
+					},
+				},
+			},
     },
   },
   plugins:[
