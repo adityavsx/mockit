@@ -9,13 +9,12 @@ export default function MockEditWindowToolBox() {
     const [, setFile] = useState<File>();
     const canEdit = useSelector((state: RootState) => state.sectionPermission.canEdit);
     return (
-        <div className="flex items-center">
-            <Button isIconOnly className="mr-4 rounded-full text-white bg-section-item-background" isDisabled={!canEdit}>
-                <form className="h-full flex items-center justify-center">
-                    <input className="bg-transparent text-transparent cursor-pointer" type="file" name="file" onChange={(e) => setFile(e.target.files?.[0])} />
-                    <CloudTwoTone />
+        <div className="flex items-center border-b-2 border-divider pb-4">
+            <Button className="w-2/6 rounded-full mr-4 my-2 text-white  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%" isDisabled={!canEdit}>
+                <form>
+                    <input className="bg-transparent cursor-pointer" type="file" name="file" onChange={(e) => setFile(e.target.files?.[0])} />
                 </form>
-            </Button>
+                </Button>
             <Button isIconOnly className="bg-section-item-background mr-4 rounded-full text-yellow-300" isDisabled={!canEdit}>
                 <ArrowForwardIosOutlined/>
             </Button>
