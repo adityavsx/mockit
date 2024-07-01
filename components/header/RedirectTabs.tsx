@@ -44,26 +44,28 @@ export default function RedirectTabs() {
                 className="font-bold"
                 selectedKey={pathName}
                 classNames={{
-                    tabList: "gap-6 w-full relative rounded-none bg-[#6C7BFF]",
+                    tabList: "gap-6 w-full relative rounded-none bg-transparent",
                     cursor: "w-full",
                     tab: "max-w-fit px-0 h-8",
-                    tabContent: "text-black"
+                    tabContent: "text-text-accent-color-3"
                 }}
                 items={FastLinks}
             >
                 {
-                    (fastLink) => (
-
-                        <Tab
-                            key={fastLink.key}
-                            title={
-                                <div className="flex items-center space-x-2">
-                                    <span>{fastLink.name}</span>
-                                </div>
-                            }
-                            href={fastLink.redirectTo}
-                        />
-                    )
+                    (fastLink) => {
+                        let styles = "flex items-center space-x-2";
+                        if (pathName == fastLink.redirectTo) styles = "flex items-center space-x-2 text-text-accent-color-1";
+                        return (
+                            <Tab
+                                key={fastLink.key}
+                                title={
+                                    <div className={ styles }>
+                                        <span>{fastLink.name}</span>
+                                    </div>
+                                }
+                                href={fastLink.redirectTo}
+                            />)
+                    }
                 }
             </Tabs>
         </div>

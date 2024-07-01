@@ -18,19 +18,22 @@ const labelsMap = {
     edit: "Edit",
 }
 export default function SectionPermissions() {
+    const [permissionsTextColor, setPermissionsTextColor] = useState("h-4 w-24 p-3 bg-section-item-background text-orange-300")
     const givenPermission = useSelector((state: RootState) => state.sectionPermission.permission);
     const dispatch = useDispatch();
-    function handleOnSelectionChange(key:string) {
+    function handleOnSelectionChange(key: string) {
+        if (key === "overview") setPermissionsTextColor("h-4 w-24 p-3 bg-section-item-background text-orange-300");
+        else setPermissionsTextColor("h-4 w-24 p-3 bg-section-item-background text-green-300")
         dispatch(updatePermissions(key));
     }
     return (
         <ButtonGroup variant="flat" className = "px-1">
             <Dropdown placement="bottom-end" className = "w-12">
-                <DropdownTrigger className = "h-6">
+                <DropdownTrigger>
                         <Button
-                            size="sm"
-                            isIconOnly
-                            className="h-4 w-24 font-bold p-3 bg-orange-200 text-orange-900"
+                        size="sm"
+                        isIconOnly
+                        className={permissionsTextColor}
                     >
                         {givenPermission}
                         </Button>

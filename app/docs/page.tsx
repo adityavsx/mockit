@@ -8,7 +8,7 @@ const input = `
 
 ## About The Project
 
-> Before we get into that we should perhaps talk 
+> Before we get into that we should perhaps talk
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -179,15 +179,16 @@ export default function DocsPage() {
             >
                 {
                     tags?.map((value) => {
+                        const hrefTag = value.getAttribute("href");
                         const getHType = parseInt(value.classList[1].charAt(value.classList[1].length - 1));
-                        const paddingLeft: number = getHType * 5;
+                        const paddingLeft: number = (getHType-1) * 10;
                         return (
-                            <div className="my-3 text-gray-400 font-medium"
+                            <div className="my-3 text-gray-500 font-medium"
                                 style={{
                                     paddingLeft: `${paddingLeft}px`
                                 }}
                             >
-                                <a href={value.getAttribute("href")}>{value.innerHTML}</a>
+                                <a href={ hrefTag!==null ? hrefTag : undefined}>{value.innerHTML}</a>
                             </div>
                         )
                     })

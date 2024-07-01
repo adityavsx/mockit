@@ -11,15 +11,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'navbar-background-light': "#fff",
-        'section-item': '#E6E9FF',
-        'section-item-action': '#B4BDFF',
-        'mock-item-hover': '#B7BFFF',
-        'add-section': '#EFEFEF',
-        'navbar-determining-icon': '#BCC3FF',
-        'navbar-determining-icon-fill': '#000640',
-        'section-item-delete': '#FFD5D5',
-        'section-item-delete-active': '#F9B1B1'
+        "background-color": "rgba(var(--backgroundColor))",
+        "text-accent-color-1": "rgba(var(--textAccentColorOne))",
+        "text-accent-color-2": "rgba(var(--textAccentColorTwo))",
+        "section-item-background": "rgba(var(--sectionItemBackground))",
+        "divider": "rgba(var(--divider))",
+        "text-accent-color-3": "rgba(var(--textAccentColorThree))",
 
       },
       typography: {

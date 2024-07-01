@@ -21,3 +21,12 @@
     visibility: hidden;
   }
 }
+
+.dark {
+  --backgroundColor: 0 0 0;
+  --textAccentColorOne : 256 256 256;
+  --textAccentColorTwo : 199 199 199;
+  --textAccentColorThree : 170 170 170;
+  --sectionItemBackground : 12 12 12;
+  --divider: 14 14 14;
+}

@@ -6,11 +6,11 @@ export default function MockWindowHeader(props: {
 }) {
     let selectedSectionIs: string = useSelector((state: RootState) => state.sectionAction.selectedSection);
     return (
-        <div className="flex border-gray-200 border-b-1">
-            <h1 className="text-2xl text-black ml-1 font-bold">
+        <div className="boder-white py-2">
+            <h1 className="text-2xl text-text-accent-color-1 font-bold">
                 {props.mockName}
             </h1>
-            <h6 className="text-md text-gray-400 mt-1.5 ml-2 jutify-end">
+            <h6 className="text-sm text-text-accent-color-3">
                 {selectedSectionIs}
             </h6>
         </div>

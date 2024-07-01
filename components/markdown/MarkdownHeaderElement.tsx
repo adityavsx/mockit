@@ -9,7 +9,7 @@ export default function MarkdownHeaderElement(props : { hprops : HProps , hType 
         case 1:
             return (
             <h1 id={slug} className={tagRules.headers}>
-                <FormattedHTag slug={slug} hprops={props.hprops} hType={props.hType} />
+                    <FormattedHTag slug={slug} hprops={props.hprops} hType={props.hType} />
             </h1>
             );
         case 2:
@@ -50,8 +50,9 @@ function FormattedHTag(props: { slug: string, hprops: HProps, hType: number }) {
     const classNames = `no-underline custom-md-header-link-${props.hType} font-bold`
     return (
         <>
-            <a href={`#${props.slug}`} {...(props.hprops)} className={classNames}></a>
-            <span > #</span>
+            <span className="text-white hover:text-gray-400 ease-in transition-all border-b-2 border-white">
+                <a href={`#${props.slug}`} {...(props.hprops)} className={classNames}></a> #
+            </span>
         </>
     )
 }
